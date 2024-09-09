@@ -1,4 +1,4 @@
-class pessoa {
+class Pessoa {
     constructor(nome, altura, peso, genero){ // Atributos
         this.nome =nome;
         this.idade = idade;
@@ -8,6 +8,6 @@ class pessoa {
     }
     //Métodos
     falar() {
-        console.log('ola, meu nome é ${this.nome}!');
+        console.log(`ola, meu nome é ${this.nome}!`);
     }
 }
