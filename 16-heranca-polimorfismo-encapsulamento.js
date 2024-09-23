@@ -72,3 +72,58 @@ class Assassina extends personagem {
         console.log(`${this.nome}usa sua furtividade de nivel ${this.furtividade} para se esconder!`)
     }
 }
+
+//classe derivada - paladino
+class paladino extends personagem {
+    constructor(nome, nivel, vida, mana, fe) {
+        super(nome, "paladino", nivel, vida, mana);
+        this.fe = fe; //atributos especifico
+    }
+
+    // sobrescrevendo o método defesa
+    defesa() {
+        console.log(`${this.nome} se defendeu com o escudo sagrado, absorvendo mais dano com base na fé (${this.fe})!`);
+    }
+
+    //método especifico
+    curar() {
+        console.log(`${this.nome} usa sua fé para curar a si mesmo ou aliados!`);
+    }
+}
+// classe derivada - mecanico
+class mecanico extends personagem {
+    constructor(nome, nivel, mana, engenharia) {
+        super(nome, "Mecanico", nivel, vida, mana);
+        this.engenharia = engenharia; // atributos especifico
+    }
+
+    // sobrescrevendo o método receberDano
+    receberDano(dano) {
+        const danoReduzido = dano - this.engenharia;
+        super.receberDano(danoReduzido);
+        console.log(`${this.nome} usou sua engenharia para reduzir o dano em ${this.engenharia}.`);
+    }
+
+    // método especifico
+    costruirTorre() {
+        console.log(`${this.nome} contruiu uma torre defensiva!`);
+    }
+}
+
+//Criando instancia da classe derivada Assassino
+const assassino = new Assassino("Luna Sombria", 10, 100, 50, 8);
+//Chamando os métodos
+assassino.atacar();
+assassino.usarFurtividade();
+
+//Criando instancia da classe derivada Paladino
+const paladino = new Paladino("Sir Lancelot", 12, 120, 70, 15);
+//Chamando os métodos
+paladino.defesa();
+paladino.curar();
+
+//Criando instancia da classe derivada Mecanico
+const mecanico = new Mecanico("Roberto das Engrenagens", 8, 90, 40, 5);
+//Chamando os métodos
+mecanico.receberDano(30);
+mecanico.construirTorre();
