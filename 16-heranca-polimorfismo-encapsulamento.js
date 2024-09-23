@@ -53,4 +53,22 @@ class personagem {
         this.#vida -= dano;
         console.log(`${this.#nome} recebeu ${dano} de dano. Vida restante: ${this.#vida}`);
     }
+
+}
+// classe derivada - Assassina
+class Assassina extends personagem {
+    constructor(nome, nivel, vida, mana, furtividade) {
+        super(nome, "Assassino", nivel, vida,mana);
+        this.furtividade = furtividade; // Atributos especifico
+    }
+
+    // Sobrescrevendo o método atacar
+    atacar() {
+        console.log(`${this.nome} atacar silenciosamente com dano adicional pela furtividade!`)
+    }
+
+    // Métodos especifico
+    usarFurtividade() {
+        console.log(`${this.nome}usa sua furtividade de nivel ${this.furtividade} para se esconder!`)
+    }
 }
