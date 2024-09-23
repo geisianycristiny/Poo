@@ -1,4 +1,4 @@
-class personagem {
+class Personagem {
     // Encapsulando os atributos com #, tornando-os privados.
     #nome;
     #classe;
@@ -56,7 +56,7 @@ class personagem {
 
 }
 // classe derivada - Assassina
-class Assassina extends personagem {
+class Assassino extends Personagem {
     constructor(nome, nivel, vida, mana, furtividade) {
         super(nome, "Assassino", nivel, vida,mana);
         this.furtividade = furtividade; // Atributos especifico
@@ -74,7 +74,7 @@ class Assassina extends personagem {
 }
 
 //classe derivada - paladino
-class paladino extends personagem {
+class Paladino extends Personagem {
     constructor(nome, nivel, vida, mana, fe) {
         super(nome, "paladino", nivel, vida, mana);
         this.fe = fe; //atributos especifico
@@ -91,8 +91,8 @@ class paladino extends personagem {
     }
 }
 // classe derivada - mecanico
-class mecanico extends personagem {
-    constructor(nome, nivel, mana, engenharia) {
+class Mecanico extends Personagem {
+    constructor(nome, nivel, vida, mana, engenharia) {
         super(nome, "Mecanico", nivel, vida, mana);
         this.engenharia = engenharia; // atributos especifico
     }
@@ -105,7 +105,7 @@ class mecanico extends personagem {
     }
 
     // método especifico
-    costruirTorre() {
+    construirTorre() {
         console.log(`${this.nome} contruiu uma torre defensiva!`);
     }
 }
