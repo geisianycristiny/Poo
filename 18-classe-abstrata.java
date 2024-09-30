@@ -59,4 +59,17 @@ class Mago extends personagem {
         system.out.println(nome + "usa um escudo magico para se defender!");
     }
 
+    }
+
+    // classe principal
+    public class Main {
+        public static void main(String[] args) {
+            Guerreiro guerreiro = new Guerreiro("Thorin", "Espada");
+            guerreiro.atacar();
+            guerreiro.defender();
+
+            Mago mago = new mago("Gandalf", "Bola de Fogo");
+            mago.atacar();
+            mago.defender(); 
+    }
 }
