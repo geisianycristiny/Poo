@@ -1,75 +1,72 @@
-// classe abstrata "personagem"
-abstrata class personagem {
+// Classe abstrata "Personagem"
+abstract class Personagem {
     protected String nome;
 
-    // construtor da classe personagem
-    public personagem(String nome) {
+    // Construtor da classe Personagem
+    public Personagem(String nome) {
         this.nome = nome;
     }
 
-    // método abstratos
+    // Métodos abstratos
     public abstract void atacar();
     public abstract void defender();
 }
 
-// classe derivada "Guerreiro"
-class Guerreiro extends personagem {
-    privata String arma;
+// Classe derivada "Guerreiro"
+class Guerreiro extends Personagem {
+    private String arma;
 
-    // construtor da classe Guerreiro
-    public Guerreiro(String, String arma) {
+    // Construtor da classe Guerreiro
+    public Guerreiro(String nome, String arma) {
         super(nome);
         this.arma = arma;
     }
 
-    // sobrescrita do metodo atacar da classe abstrata personagem
+    // Subrescrita do método atacr da classe Abstrata Personagem
     @Override
     public void atacar() {
-        system.out.println(nome + "ataca com a " + arma + "!");
+        System.out.println(nome + " ataca com a " + arma);
     }
-
-    // sobrescrita do metodo defender da classe abstrata personagem
+    
+    // Subrescrita do método defender da classe Abstrata Personagem
     @Override
     public void defender() {
-        system.out.println(nome + "levanta o escudo para se defender!");
-
-    
+        System.out.println(nome + " levanta o escudo para se defender! " );
     }
 }
 
-// classe derivada "Mago"
-class Mago extends personagem {
-    privata String magia;
+// Classe derivada "Mago"
+class Mago extends Personagem {
+    private String magia;
 
-    //construtor da classe mago
+    // Construtor da classe Guerreiro
     public Mago(String nome, String magia) {
         super(nome);
         this.magia = magia;
     }
 
-    // sobrescrita do metodo atacar da classe abstrata personagem
+    // Subrescrita do método atacr da classe Abstrata Personagem
     @Override
     public void atacar() {
-        system.out.println(nome + "lança a magia " + mafia + "!");
+        System.out.println(nome + " lança a magia " + magia);
     }
     
-    // sobrescrita do metodo defender da classe abstrata personagem
+    // Subrescrita do método defender da classe Abstrata Personagem
     @Override
     public void defender() {
-        system.out.println(nome + "usa um escudo magico para se defender!");
+        System.out.println(nome + " usa um escudo para se defender! " );
     }
+}
 
-    }
+//Classe principal
+public class Main {
+    public static void main(String[] args) {
+        Guerreiro guerreiro = new Guerreiro("Thorin", "Espada");
+        guerreiro.atacar();
+        guerreiro.defender();
 
-    // classe principal
-    public class Main {
-        public static void main(String[] args) {
-            Guerreiro guerreiro = new Guerreiro("Thorin", "Espada");
-            guerreiro.atacar();
-            guerreiro.defender();
-
-            Mago mago = new mago("Gandalf", "Bola de Fogo");
-            mago.atacar();
-            mago.defender(); 
+        Mago mago = new Mago("Gandalf", "Bola de Fogo");
+        mago.atacar();
+        mago.defender();
     }
 }
